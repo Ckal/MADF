@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="styledPopupSample.jsf" id="d1">
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="50px" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                        <!-- Header -->
+                        <af:panelStretchLayout id="psl2" startWidth="33%" endWidth="33%">
+                            <f:facet name="center">
+                                <af:outputText value="PopUp Sample" id="ot1"
+                                               inlineStyle="text-align:center; font-size:xx-large;"/>
+                            </f:facet>
+                            <f:facet name="end">
+                                <af:spacer width="10" height="10" id="s1"/>
+                            </f:facet>
+                            <f:facet name="start">
+                                <af:spacer width="10" height="10" id="s2"/>
+                            </f:facet>
+                        </af:panelStretchLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Content -->
+                        <af:panelStretchLayout id="psl1">
+                            <f:facet name="bottom"/>
+                            <f:facet name="center">
+                                <af:panelBox id="pb1" type="stretch">
+                                    <f:facet name="toolbar"/>
+                                    <af:popup childCreation="deferred" autoCancel="enabled" id="styledPopUp">
+                                        <af:panelGroupLayout id="pgl2" styleClass="AFStretchWidth" layout="vertical">
+                                            <af:panelGroupLayout id="pgl3" styleClass="AFStretchWidth"
+                                                                 inlineStyle="background-color:Highlight;"
+                                                                 layout="horizontal">
+                                                <af:outputText value="Sample PopUp" id="ot2"
+                                                               inlineStyle="text-align:center;"/>
+                                            </af:panelGroupLayout>
+                                            <af:panelGroupLayout id="pgl4">
+                                                <af:richTextEditor label="Enter Sample TExt" id="rte1">
+                                                    <f:facet name="footer"/>
+                                                </af:richTextEditor>
+                                            </af:panelGroupLayout>
+                                        </af:panelGroupLayout>
+                                    </af:popup>
+                                    <af:button text="Push me to see the popup" id="b1"
+                                               inlineStyle="min-height:20pt; min-width:20pt; max-width:150px; max-height:50px;">
+                                        <af:showPopupBehavior popupId="styledPopUp" triggerType="click"/>
+                                    </af:button>
+                                </af:panelBox>
+                            </f:facet>
+                            <f:facet name="start"/>
+                            <f:facet name="end"/>
+                            <f:facet name="top"/>
+                        </af:panelStretchLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>
