@@ -1,2 +1,2 @@
 # Oracle-ADF-
-My Oracle ADF samples
+My Oracle Mobile ADF samples
